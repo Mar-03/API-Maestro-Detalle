@@ -1,0 +1,101 @@
+:root {
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #172033;
+  background: #f4f7fb;
+  line-height: 1.5;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; }
+button, input { font: inherit; }
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  align-items: center;
+  padding: 2rem max(1.25rem, calc((100vw - 1180px) / 2));
+  color: white;
+  background: linear-gradient(120deg, #173b79, #2859aa);
+}
+
+.hero h1, .panel h2 { margin: 0; }
+.hero p { margin: .25rem 0 0; }
+.eyebrow { margin: 0 0 .25rem; font-size: .75rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; opacity: .75; }
+
+.hero button {
+  border: 1px solid rgba(255,255,255,.5);
+  border-radius: .7rem;
+  padding: .75rem 1rem;
+  color: white;
+  background: rgba(255,255,255,.12);
+  cursor: pointer;
+}
+
+.container { max-width: 1180px; margin: 0 auto; padding: 1.5rem 1.25rem 3rem; }
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 1rem; }
+.stats article, .panel, .student-card { background: white; border: 1px solid #e4e9f1; box-shadow: 0 8px 24px rgba(28,43,70,.06); }
+.stats article { border-radius: .9rem; padding: 1rem 1.1rem; }
+.stats span { display: block; color: #667085; font-size: .9rem; }
+.stats strong { display: block; margin-top: .3rem; font-size: 1.5rem; }
+.system-status {
+  display: flex;
+  gap: .75rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: .5rem .8rem;
+  border-radius: 999px;
+  background: #eef2f7;
+  color: #475467;
+  font-size: .82rem;
+  font-weight: 600;
+}
+
+.status-badge.connected {
+  background: #eef9f3;
+  color: #1f7a4d;
+}
+
+.status-badge.disconnected {
+  background: #fff1f1;
+  color: #b42318;
+}
+
+.status-badge.checking {
+  background: #fff8e8;
+  color: #946200;
+}
+.panel { border-radius: 1rem; padding: 1rem; }
+.panel-heading { display: flex; justify-content: space-between; align-items: end; gap: 1rem; margin-bottom: .8rem; }
+.panel-heading input { width: min(420px, 100%); border: 1px solid #d6dce6; border-radius: .7rem; padding: .7rem .8rem; }
+.status { min-height: 1.5rem; margin-bottom: .8rem; color: #667085; font-size: .85rem; }
+.students { display: grid; gap: .9rem; }
+
+.student-card { border-radius: .9rem; padding: 1rem; box-shadow: none; }
+.student-head { display: flex; justify-content: space-between; gap: 1rem; align-items: start; }
+.student-head h3 { margin: 0; font-size: 1rem; }
+.student-head p { margin: .25rem 0 0; color: #667085; font-size: .84rem; }
+.student-head > strong { font-size: 1.2rem; color: #1f7a4d; }
+.progress { height: .55rem; margin-top: .8rem; overflow: hidden; border-radius: 99px; background: #e9eef5; }
+.progress span { display: block; height: 100%; border-radius: inherit; background: #248b59; }
+.progress-copy { margin: .35rem 0 .7rem; color: #667085; font-size: .82rem; }
+.missions { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: .45rem; }
+.mission { display: flex; gap: .55rem; align-items: center; border-radius: .65rem; padding: .55rem .65rem; background: #f7f9fc; }
+.mission.done { background: #eef9f3; }
+.mission-mark { font-size: 1.15rem; }
+.mission strong, .mission small { display: block; }
+.mission strong { font-size: .8rem; }
+.mission small { color: #667085; font-size: .72rem; }
+.empty { color: #667085; text-align: center; padding: 2rem; }
+
+@media (max-width: 720px) {
+  .hero, .panel-heading { align-items: stretch; flex-direction: column; }
+  .stats { grid-template-columns: 1fr; }
+  .panel-heading input { width: 100%; }
+  .student-head { flex-direction: column; }
+}

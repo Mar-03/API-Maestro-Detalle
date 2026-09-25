@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tablero de Misiones</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <div>
+      <p class="eyebrow">Desarrollo Web</p>
+      <h1>Tablero de Misiones</h1>
+      <p>Seguimiento del avance registrado por los estudiantes.</p>
+    </div>
+    <button id="refreshButton" type="button">Actualizar</button>
+  </header>
+
+  <main class="container">
+    <section id="stats" class="stats" aria-label="Estadísticas generales"></section>
+    <section class="system-status" aria-label="Estado del sistema">
+  <span id="apiStatus" class="status-badge checking">
+    ● Verificando API...
+  </span>
+
+  <span id="catalogStatus" class="status-badge">
+    Catálogo: -- misiones
+  </span>
+</section>
+    <section class="panel">
+      <div class="panel-heading">
+        <div>
+          <p class="eyebrow">Control de avance</p>
+          <h2>Estudiantes</h2>
+        </div>
+        <input id="searchInput" type="search" placeholder="Buscar por carnet, nombre o correo" />
+      </div>
+
+      <div id="status" class="status" role="status" aria-live="polite"></div>
+      <div id="students" class="students"></div>
+    </section>
+  </main>
+
+  <template id="studentTemplate">
+    <article class="student-card">
+      <div class="student-head">
+        <div>
+          <h3 data-name></h3>
+          <p><span data-carnet></span> · <span data-email></span></p>
+        </div>
+        <strong data-percent></strong>
+      </div>
+      <div class="progress" aria-hidden="true"><span data-bar></span></div>
+      <p class="progress-copy"><span data-completed></span> de <span data-total></span> misiones completadas</p>
+      <div class="missions" data-missions></div>
+    </article>
+  </template>
+
+  <script src="/app.js" defer></script>
+</body>
+</html>
